@@ -24,3 +24,11 @@ Given('Goto MyAccount menu') do
     @driver.find_element(:xpath,"//*[@id='username']").send_keys "hansama"
     @driver.find_element(:xpath,"//*[@id='password']").send_keys "clannand"
   end
+
+  When('Empty username textbox and valid password Value1 in password textbox.') do
+    @driver.find_element(:xpath,"//*[@id='password']").send_keys "Value1"
+  end
+  
+  When('Empty username textbox and valid password asdgfiu3782jksdg in password textbox.') do
+    @driver.find_element(:xpath,"//*[@id='password']").send_keys "asdgfiu3782jksdg"
+  end

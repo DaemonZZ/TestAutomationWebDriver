@@ -19,3 +19,15 @@ Feature: Login
             | usename   | pass     |
             | aloaloalo | 123abc   |
             | hansama   | clannand |
+
+    #4
+    Scenario Outline: Log-in with empty username and valid password.
+        Given Goto MyAccount menu
+        When Empty username textbox and valid password <pass> in password textbox.
+        And Click Login btn
+        Then 'ie Invalid username' is display and prompt to enter login again
+
+        Examples:
+            | pass             |
+            | Value1           |
+            | asdgfiu3782jksdg |
