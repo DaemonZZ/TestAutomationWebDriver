@@ -9,21 +9,21 @@ Feature: Login
     8. Login-Authentication
 
     #2
-    Scenario Outline: Log-in with incorrect username and incorrect password.
-        Given Goto MyAccount menu
-        When Enter incorrect username <usename> in username textbox incorrect password <pass> in password textbox.
-        And Click Login btn
-        Then 'ie Invalid username' is display and prompt to enter login again
+    # Scenario Outline: Log-in with incorrect username and incorrect password.
+    #     Given Goto MyAccount menu
+    #     When Enter incorrect username "<usename>" in username textbox incorrect password "<pass>" in password textbox.
+    #     And Click Login btn
+    #     Then 'ie Invalid username' is display and prompt to enter login again
 
-        Examples:
-            | usename   | pass     |
-            | aloaloalo | 123abc   |
-            | hansama   | clannand |
+    #     Examples:
+    #         | usename   | pass     |
+    #         | aloaloalo | 123abc   |
+    #         | hansama   | clannand |
 
     #4
     Scenario Outline: Log-in with empty username and valid password.
         Given Goto MyAccount menu
-        When Empty username textbox and valid password <pass> in password textbox.
+        When Empty username textbox and valid password "<pass>" in password textbox.
         And Click Login btn
         Then 'ie Invalid username' is display and prompt to enter login again
 

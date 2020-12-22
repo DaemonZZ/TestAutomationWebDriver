@@ -15,20 +15,10 @@ Given('Goto MyAccount menu') do
     expect(alert).to eql(string)
   end
   
-  When('Enter incorrect username aloaloalo in username textbox incorrect password 123abc in password textbox.') do
-    @driver.find_element(:xpath,"//*[@id='username']").send_keys "aloaloalo"
-    @driver.find_element(:xpath,"//*[@id='password']").send_keys "123abc"
+  When('Enter incorrect username {string} in username textbox incorrect password {string} in password textbox.') do |string, string2|
+    @driver.find_element(:xpath,"//*[@id='username']").send_keys string
+    @driver.find_element(:xpath,"//*[@id='password']").send_keys string2
   end
-  
-  When('Enter incorrect username hansama in username textbox incorrect password clannand in password textbox.') do
-    @driver.find_element(:xpath,"//*[@id='username']").send_keys "hansama"
-    @driver.find_element(:xpath,"//*[@id='password']").send_keys "clannand"
-  end
-
-  When('Empty username textbox and valid password Value1 in password textbox.') do
-    @driver.find_element(:xpath,"//*[@id='password']").send_keys "Value1"
-  end
-  
-  When('Empty username textbox and valid password asdgfiu3782jksdg in password textbox.') do
-    @driver.find_element(:xpath,"//*[@id='password']").send_keys "asdgfiu3782jksdg"
+  When('Empty username textbox and valid password {string} in password textbox.') do |string|
+    @driver.find_element(:xpath,"//*[@id='password']").send_keys string
   end
